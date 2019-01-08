@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class deleniebezostatyk {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int count = Integer.parseInt(scanner.nextLine());
+		double countTwo = 0; 
+		double countThree = 0; 
+		double countFour = 0; 
+		for (int i = 0; i < count; i++) {
+			double number = Double.parseDouble(scanner.nextLine());
+
+			if (number % 2 == 0) {
+				countTwo++; 
+			}
+			if (number % 3 == 0) {
+				countThree++; 
+			}
+			if (number % 4 == 0) { 
+				countFour++;
+			}
+		}
+		double percentTwo = (countTwo / count) * 100; 
+		double percentThree = (countThree / count) * 100; 
+		double percentFour = (countFour / count) * 100; 
+		System.out.printf("%.2f%%%n", percentTwo);
+		System.out.printf("%.2f%%%n", percentThree);
+		System.out.printf("%.2f%%%n", percentFour);
+	}
+
+}
