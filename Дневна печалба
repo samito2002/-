@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class dnevnapechalba {
+
+	public static void main(String[] args) {
+				Scanner sc = new Scanner(System.in);
+				int DayWork = Integer.parseInt(sc.nextLine());
+				double MoneyDay = Double.parseDouble(sc.nextLine());
+				double dolar = Double.parseDouble(sc.nextLine());
+				double monthSelary = DayWork * MoneyDay;
+				double moneyYear = (monthSelary * 12) + (monthSelary * 2.5);
+				double taxs = 0.25 * moneyYear;
+				double Zaplata = moneyYear - taxs;
+				double SelaryInLeva = Zaplata * dolar;
+				
+				double average = SelaryInLeva / 365;
+				System.out.printf("%.2f", average);
+				
+			}
+
+}
