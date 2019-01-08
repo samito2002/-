@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class biletizamach {
+
+	public static void main(String[] args) {
+		
+	        Scanner sc = new Scanner(System.in);
+
+	        double budget; 
+	        String category;
+	        int peopleInGroup; 
+	        double leftBudget; 
+	        double percentage;
+
+	     
+	            budget = Double.parseDouble(sc.nextLine());
+	            category = sc.nextLine();
+	            peopleInGroup = Integer.parseInt(sc.nextLine());
+	        
+
+	        if (peopleInGroup <= 4) {
+	            percentage = 0.25;
+	        } else if (peopleInGroup >= 5 && peopleInGroup <= 9) {
+	            percentage = 0.4;
+	        } else if (peopleInGroup >= 10 && peopleInGroup <= 24) {
+	            percentage = 0.5;
+	        } else if (peopleInGroup >= 25 && peopleInGroup <= 49) {
+	            percentage = 0.6;
+	        } else {
+	            percentage = 0.75;
+	        }
+	        leftBudget = budget * percentage; 
+	        if (category.equals("VIP")) { 
+	            if (leftBudget >= 499.99 * peopleInGroup) { 
+	                leftBudget -= 499.99;
+	                System.out.printf("Yes! You have %.2f leva left.", leftBudget);
+	            } else {
+	                leftBudget=(499.99*peopleInGroup)-leftBudget;
+	                System.out.printf("Not enough money! You need %.2f leva.", leftBudget);
+	            }
+	        } else {
+	            if (leftBudget >= 249.99 * peopleInGroup) { 
+	                leftBudget -= 249.99;
+	                System.out.printf("Yes! You have %.2f leva left.", leftBudget);
+	            } else {
+	                leftBudget=(249.99*peopleInGroup)-leftBudget;
+	                System.out.printf("Not enough money! You need %.2f leva.", leftBudget);
+	            }
+	        }
+
+	    }
+	}
