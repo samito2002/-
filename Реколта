@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class zadacha {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int x; 
+		double y; 
+		int z; 
+		int workers;
+		double totalWine;
+		double totalGrape;
+		x = Integer.parseInt(sc.nextLine());
+		y = Double.parseDouble(sc.nextLine());
+		z = Integer.parseInt(sc.nextLine());
+		workers = Integer.parseInt(sc.nextLine());
+		totalGrape = Math.round(x * y);
+		totalWine = Math.round((totalGrape / 2.5) * 0.4);
+		if (totalWine < z) {
+			double neededWine = Math.round(z - totalWine);
+			System.out.println("It will be a tough winter! More " + neededWine + " liters wine needed");
+		} else {
+			double leftLiters = totalWine - z;
+			double wineForWorkers = leftLiters / workers; 
+			System.out.println("Good harvest this year! Total wine: " + totalWine + " liters.");
+			System.out.println(leftLiters + " left -> " + wineForWorkers + " liters per person");
+		}
+	}
+}
